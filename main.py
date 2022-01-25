@@ -54,7 +54,7 @@ class player(pygame.sprite.Sprite):
         self.rect.midbottom = self.pos
 
         if self.pos.y > HEIGHT:
-            self.kill()
+            self.die()
 
     def jump(self):
         hits = pygame.sprite.spritecollide(self, platforms, False)
@@ -68,7 +68,7 @@ class player(pygame.sprite.Sprite):
                 self.pos.y = hits[0].rect.top + 1
                 self.vel.y = 0
 
-    def kill(self):
+    def die(self):
         pygame.quit()
         sys.exit()
 
